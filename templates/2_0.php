@@ -2722,7 +2722,7 @@
           </div>
         </div>
       </section>
-      <div class="modal_close_btn drawarea__controls_btn btn hidden" onclick="zero_controls_close_reverRedir();" style="text-align: center; width: 100%;">Valmis</div>
+      <div class="modal_close_btn drawarea__controls_btn btn hidden" onclick="zero_controls_close_reverRedirt();" style="text-align: center; width: 100%;">Valmis</div>
       <!-- <div class="modal_close_btn drawarea__controls_btn btn hidden" onclick="zero_controls_close();" style="text-align: center; width: 100%;">Valmis</div> -->
     </div>
   </div>
