@@ -630,210 +630,236 @@ td.grid-item {
 	justify-content: end;
 	align-items: center;
 }
-.popup__statuses_b .c_meaning:nth-child(2):before,
+.popup__statuses_a,
+.popup__statuses_b,
+.popup__statuses_c,
+.popup__statuses_d,
+.popup__statuses_e,
+.popup__statuses_f,
+.popup__statuses_g,
+.popup__statuses_h,
+.popup__statuses_i,
+.popup__statuses_j,
+.popup__statuses_k {
+	display: none;
+}
+.p_active.popup__statuses_a,
+.p_active.popup__statuses_b,
+.p_active.popup__statuses_c,
+.p_active.popup__statuses_d,
+.p_active.popup__statuses_e,
+.p_active.popup__statuses_f,
+.p_active.popup__statuses_g,
+.p_active.popup__statuses_h,
+.p_active.popup__statuses_i,
+.p_active.popup__statuses_j,
+.p_active.popup__statuses_k {
+	display: block;
+}
+.p_active.popup__statuses_b .c_meaning:nth-child(2):before,
 .c_meaning.l4_a:before {
 	background: var(--l4_a);
 }
-.popup__statuses_b .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_b .c_meaning:nth-child(3):before,
 .c_meaning.l4_b:before {
 	background: var(--l4_b);
 }
-.popup__statuses_b .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_b .c_meaning:nth-child(4):before,
 .c_meaning.l4_c:before {
 	background: var(--l4_c);
 }
-.popup__statuses_b .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_b .c_meaning:nth-child(5):before,
 .c_meaning.l4_d:before {
 	background: var(--l4_d);
 }
-.popup__statuses_b .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_b .c_meaning:nth-child(6):before,
 .c_meaning.l4_e:before {
 	background: var(--l4_e);
 }
 
-.popup__statuses_c .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_c .c_meaning:nth-child(2):before,
 .c_meaning.l3_a:before {
 	background: var(--l3_a);
 }
-.popup__statuses_c .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_c .c_meaning:nth-child(3):before,
 .c_meaning.l3_b:before {
 	background: var(--l3_b);
 }
-.popup__statuses_c .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_c .c_meaning:nth-child(4):before,
 .c_meaning.l3_c:before {
 	background: var(--l3_c);
 }
-.popup__statuses_c .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_c .c_meaning:nth-child(5):before,
 .c_meaning.l3_d:before {
 	background: var(--l3_d);
 }
-.popup__statuses_c .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_c .c_meaning:nth-child(6):before,
 .c_meaning.l3_e:before {
 	background: var(--l3_e);
 }
 
-.popup__statuses_d .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_d .c_meaning:nth-child(2):before,
 .c_meaning.l2_a:before {
 	background: var(--l2_a);
 }
-.popup__statuses_d .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_d .c_meaning:nth-child(3):before,
 .c_meaning.l2_b:before {
 	background: var(--l2_b);
 }
-.popup__statuses_d .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_d .c_meaning:nth-child(4):before,
 .c_meaning.l2_c:before {
 	background: var(--l2_c);
 }
-.popup__statuses_d .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_d .c_meaning:nth-child(5):before,
 .c_meaning.l2_d:before {
 	background: var(--l2_d);
 }
-.popup__statuses_d .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_d .c_meaning:nth-child(6):before,
 .c_meaning.l2_e:before {
 	background: var(--l2_e);
 }
 
-.popup__statuses_e .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_e .c_meaning:nth-child(2):before,
 .c_meaning.l1_a:before {
 	background: var(--l1_a);
 }
-.popup__statuses_e .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_e .c_meaning:nth-child(3):before,
 .c_meaning.l1_b:before {
 	background: var(--l1_b);
 }
-.popup__statuses_e .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_e .c_meaning:nth-child(4):before,
 .c_meaning.l1_c:before {
 	background: var(--l1_c);
 }
-.popup__statuses_e .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_e .c_meaning:nth-child(5):before,
 .c_meaning.l1_d:before {
 	background: var(--l1_d);
 }
-.popup__statuses_e .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_e .c_meaning:nth-child(6):before,
 .c_meaning.l1_e:before {
 	background: var(--l1_e);
 }
 
-.popup__statuses_f .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_f .c_meaning:nth-child(2):before,
 .c_meaning.l5_a:before {
 	background: var(--l5_a);
 }
-.popup__statuses_f .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_f .c_meaning:nth-child(3):before,
 .c_meaning.l5_b:before {
 	background: var(--l5_b);
 }
-.popup__statuses_f .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_f .c_meaning:nth-child(4):before,
 .c_meaning.l5_c:before {
 	background: var(--l5_c);
 }
-.popup__statuses_f .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_f .c_meaning:nth-child(5):before,
 .c_meaning.l5_d:before {
 	background: var(--l5_d);
 }
-.popup__statuses_f .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_f .c_meaning:nth-child(6):before,
 .c_meaning.l5_e:before {
 	background: var(--l5_e);
 }
 
-.popup__statuses_g .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_g .c_meaning:nth-child(2):before,
 .c_meaning.s6_a:before {
 	background: var(--s6_a);
 }
-.popup__statuses_g .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_g .c_meaning:nth-child(3):before,
 .c_meaning.s6_b:before {
 	background: var(--s6_b);
 }
-.popup__statuses_g .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_g .c_meaning:nth-child(4):before,
 .c_meaning.s6_c:before {
 	background: var(--s6_c);
 }
-.popup__statuses_g .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_g .c_meaning:nth-child(5):before,
 .c_meaning.s6_d:before {
 	background: var(--s6_d);
 }
-.popup__statuses_g .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_g .c_meaning:nth-child(6):before,
 .c_meaning.s6_e:before {
 	background: var(--s6_e);
 }
 
-.popup__statuses_h .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_h .c_meaning:nth-child(2):before,
 .c_meaning.s7_a:before {
 	background: var(--s7_a);
 }
-.popup__statuses_h .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_h .c_meaning:nth-child(3):before,
 .c_meaning.s7_b:before {
 	background: var(--s7_b);
 }
-.popup__statuses_h .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_h .c_meaning:nth-child(4):before,
 .c_meaning.s7_c:before {
 	background: var(--s7_c);
 }
-.popup__statuses_h .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_h .c_meaning:nth-child(5):before,
 .c_meaning.s7_d:before {
 	background: var(--s7_d);
 }
-.popup__statuses_h .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_h .c_meaning:nth-child(6):before,
 .c_meaning.s7_e:before {
 	background: var(--s7_e);
 }
-.popup__statuses_i .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_i .c_meaning:nth-child(2):before,
 .c_meaning.s8_a:before {
-	background: var(--s7_a);
+	background: var(--s8_a);
 }
-.popup__statuses_i .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_i .c_meaning:nth-child(3):before,
 .c_meaning.s8_b:before {
-	background: var(--s7_b);
+	background: var(--s8_b);
 }
-.popup__statuses_i .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_i .c_meaning:nth-child(4):before,
 .c_meaning.s8_c:before {
-	background: var(--s7_c);
+	background: var(--s8_c);
 }
-.popup__statuses_i .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_i .c_meaning:nth-child(5):before,
 .c_meaning.s8_d:before {
-	background: var(--s7_d);
+	background: var(--s8_d);
 }
-.popup__statuses_i .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_i .c_meaning:nth-child(6):before,
 .c_meaning.s8_e:before {
-	background: var(--s7_e);
+	background: var(--s8_e);
 }
 
-.popup__statuses_j .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_j .c_meaning:nth-child(2):before,
 .c_meaning.s9_a:before {
 	background: var(--s9_a);
 }
-.popup__statuses_j .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_j .c_meaning:nth-child(3):before,
 .c_meaning.s9_b:before {
 	background: var(--s9_b);
 }
-.popup__statuses_j .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_j .c_meaning:nth-child(4):before,
 .c_meaning.s9_c:before {
 	background: var(--s9_c);
 }
-.popup__statuses_j .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_j .c_meaning:nth-child(5):before,
 .c_meaning.s9_d:before {
 	background: var(--s9_d);
 }
-.popup__statuses_j .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_j .c_meaning:nth-child(6):before,
 .c_meaning.s9_e:before {
 	background: var(--s9_e);
 }
-.popup__statuses_k .c_meaning:nth-child(2):before,
+.p_active.popup__statuses_k .c_meaning:nth-child(2):before,
 .c_meaning.s10_a:before {
 	background: var(--s10_a);
 }
-.popup__statuses_k .c_meaning:nth-child(3):before,
+.p_active.popup__statuses_k .c_meaning:nth-child(3):before,
 .c_meaning.s10_b:before {
 	background: var(--s10_b);
 }
-.popup__statuses_k .c_meaning:nth-child(4):before,
+.p_active.popup__statuses_k .c_meaning:nth-child(4):before,
 .c_meaning.s10_c:before {
 	background: var(--s10_c);
 }
-.popup__statuses_k .c_meaning:nth-child(5):before,
+.p_active.popup__statuses_k .c_meaning:nth-child(5):before,
 .c_meaning.s10_d:before {
 	background: var(--s10_d);
 }
-.popup__statuses_k .c_meaning:nth-child(6):before,
+.p_active.popup__statuses_k .c_meaning:nth-child(6):before,
 .c_meaning.s10_e:before {
 	background: var(--s10_e);
 }
@@ -2028,6 +2054,10 @@ td {
 .tabs__target_statuses > section > div .c_meaning {
 	top: -10px;
 }
+
+.tabs__target_statuses .align_center {
+	flex-direction: column;
+}
 .listat__tbody input {
 	padding: 13px 4px;
 }
@@ -2446,7 +2476,8 @@ td input {
 .project__start_elaborate:active {
 	background: #6cc210;
 }
-.lineinput {
+.lineinput,
+.allowed_teams {
 	border: 0;
 	border-bottom: 1px solid #000;
 	font-style: normal;
@@ -2645,19 +2676,19 @@ input.wall_tochange_2 {
 	margin-top: 4px;
 	padding: 2px 1px;
 }
-/* .popup__statuses_g,
-.popup__statuses_h,
-.popup__statuses_i,
-.popup__statuses_j,
-.popup__statuses_k {
+/* .p_active.popup__statuses_g,
+.p_active.popup__statuses_h,
+.p_active.popup__statuses_i,
+.p_active.popup__statuses_j,
+.p_active.popup__statuses_k {
 	margin-top: 10px;
 } */
 
-.popup__statuses_g h6,
-.popup__statuses_h h6,
-.popup__statuses_i h6,
-.popup__statuses_j h6,
-.popup__statuses_k h6 {
+.p_active.popup__statuses_g h6,
+.p_active.popup__statuses_h h6,
+.p_active.popup__statuses_i h6,
+.p_active.popup__statuses_j h6,
+.p_active.popup__statuses_k h6 {
 	top: 25px;
 }
 
@@ -8402,7 +8433,6 @@ input[type="radio"].mass__selection_btn {
 		padding: 5px 6px 4px 6px;
 	}
 
-	
 	.m_hid {
 		display: none;
 	}
@@ -8410,11 +8440,11 @@ input[type="radio"].mass__selection_btn {
 	.m_col_6 {
 		flex: 0 0 49%;
 	}
-	.t_elabstatus .popup__statuses_g h6,
-	.t_elabstatus .popup__statuses_h h6,
-	.t_elabstatus .popup__statuses_i h6,
-	.t_elabstatus .popup__statuses_j h6,
-	.t_elabstatus .popup__statuses_k h6 {
+	.t_elabstatus .p_active.popup__statuses_g h6,
+	.t_elabstatus .p_active.popup__statuses_h h6,
+	.t_elabstatus .p_active.popup__statuses_i h6,
+	.t_elabstatus .p_active.popup__statuses_j h6,
+	.t_elabstatus .p_active.popup__statuses_k h6 {
 		top: 0;
 	}
 
@@ -8777,4 +8807,7 @@ input.tag_name {
 	background: red;
 	color: white;
 	flex-shrink: 0;
+}
+
+.allowed_teams {
 }

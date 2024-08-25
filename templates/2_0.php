@@ -152,7 +152,7 @@
         $s_data = explode("~~",$s_da);
       ?>
       <div class="row">
-        <div class="col-1 m_col_6 popup__statuses_a">
+        <div class="col-1 m_col_6 p_active popup__statuses_a">
           <h6><?= $s_data[0] ?></h6>
           <div class="c_meaning p_meaning c_meaning_2" data-action="undone"><i data-action="undone" class="p_meaning"><?= $st_slplit[0]; ?> </i></div>
           <div class="c_meaning p_meaning c_meaning_1" data-action="nowork"><i data-action="nowork" class="p_meaning"><?= $st_slplit[1]; ?></i></div>
@@ -1338,7 +1338,7 @@
 
   <div class="container colormeanings">
     <div class="row colormeaningsimps">
-      <div class="col-2 m_col_6 popup__statuses_a">
+      <div class="col-2 m_col_6 p_active popup__statuses_a">
         <h6><?= $s_data[0] ?></h6>
         <div class="c_meaning c_meaning_2" data-action="undone"><input oninput="change__stsplit(this)" data-action="undone" class="lineinput" value="<?= $st_slplit[0]; ?>" /></div>
         <div class="c_meaning c_meaning_1" data-action="nowork"><input oninput="change__stsplit(this)" data-action="nowork" class="lineinput" value="<?= $st_slplit[1]; ?>" /></div>
@@ -2515,7 +2515,7 @@
       else {
         echo '<div class="row">
           <h3>Seinän nimen taustaväri</h3>
-          <div class="col-2 popup__statuses_a">
+          <div class="col-2 p_active popup__statuses_a">
           <div class="c_meaning c_meaning_2" data-action="undone"><i data-action="undone">'. $st_slplit[0] .' </i></div>
           <div class="c_meaning c_meaning_1" data-action="nowork"><i data-action="nowork">'. $st_slplit[1] .' </i></div>
           <div class="c_meaning c_meaning_8" data-action="prob"><i data-action="prob" >'. $st_slplit[2] .' </i></div>

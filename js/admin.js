@@ -96,8 +96,17 @@ function admin__saveusers(key) {
 			"input:not(.fileinput)"
 		)
 		for (let b = 0; b < materialtabletd.length; b++) {
-			material_array += materialtabletd[b].value.replaceAll(",", "") + ","
+			if (b == 2) {
+				material_array +=
+					materialtabletr[a]
+						.querySelector("select")
+						.value.toLowerCase()
+						.replaceAll(",", "") + ","
+			} else {
+				material_array += materialtabletd[b].value.replaceAll(",", "") + ","
+			}
 		}
+
 		if (a == materialtabletr.length - 1) {
 			material_array += ""
 		} else {
@@ -3319,11 +3328,53 @@ function s_change_malli(letter, l_id) {
 			}
 			if (key == "s_statusheadings") {
 				t = document.querySelector(".tabs__target_statuses")
-				t_inputs = t.querySelectorAll("input")
+				t_inputs = t.querySelectorAll("input.lineinput")
 				i = 0
 				v_.split("~~").forEach((v) => {
-					t_inputs[i].value = v.replaceAll('"', "")
-					i += 1
+					if (v.length > 1) {
+						t_inputs[i].value = v.replaceAll('"', "")
+						i += 1
+					}
+				})
+			}
+			if (key == "s_statussettings") {
+				t = document.querySelector(".tabs__target_statuses")
+				t_inputs = t.querySelectorAll("input.allowed_teams")
+				i = 0
+				v_.split("~~").forEach((v) => {
+					if (v.length > 1) {
+						t_inputs[i].value = v.replaceAll('"', "")
+						i += 1
+					}
+				})
+			}
+			if (key == "s_teams") {
+				t = document.querySelector(".tiimit__tbody")
+
+				v_.split("-").forEach((r) => {
+					if (r.length > 2) {
+						r.split("~~").forEach((_v) => {
+							v = r.replaceAll('"', "").split("~~")
+							count = t.querySelectorAll("tr").length
+							row = document.createElement("tr")
+							checked = ""
+							if (v[0] == "on") {
+								checked = "checked"
+							}
+							row.innerHTML += `
+								<td>
+									<input value="${v[0]}" name="teamstatus" ${checked} type="checkbox" value="" onclick="this.checked ? this.value = 'on' : this.value = 'off';admin__saveteams();" id="teams_${count}">
+									<label for="teams_${count}" ></label>
+								</td>
+								<td>
+									<input type="text" value="${v[1]}" class="lineinput" oninput="admin__saveteams();">
+								</td>
+								<td>
+									<input type="text" value="${v[2]}" class="lineinput" oninput="admin__saveteams();">
+								</td>`
+						})
+						t.appendChild(row)
+					}
 				})
 			}
 		})
@@ -3702,6 +3753,23 @@ function appendnewaukkoitem(e) {
 
 	givenewtype()
 }
+function appendnewteam() {
+	t = document.querySelector(".tiimit__tbody")
+	count = t.querySelectorAll("tr").length
+	row = document.createElement("tr")
+	row.innerHTML = `<td>
+              <input name="teamstatus" type="checkbox" value="" onclick="this.checked ? this.value = 'on' : this.value = '';admin__saveteams();" id="teams_${count}">
+              <label for="teams_${count}"></label>
+            </td>
+              <td>
+                  <input type="text" value="" class="lineinput" oninput="admin__saveteams();">
+              </td>
+              <td>
+                  <input type="text" value="" class="lineinput" oninput="admin__saveteams();">
+              </td>`
+
+	t.appendChild(row)
+}
 
 function givenewtype() {
 	setTimeout(() => {
@@ -3922,19 +3990,24 @@ function admin__delete_message_type(el) {
 }
 
 window.addEventListener("load", (event) => {
-	statuses__headers = document.querySelectorAll(".tabs__target_statuses input")
+	statuses__headers = document.querySelectorAll(
+		".tabs__target_statuses input.lineinput"
+	)
+	statuses__settings = document.querySelectorAll(
+		".tabs__target_statuses input.allowed_teams"
+	)
 
-	statuses__headers.forEach((sh) => {
+	document.querySelectorAll(".tabs__target_statuses input").forEach((sh) => {
 		sh.addEventListener("input", (evt) => {
-			saveinputs(statuses__headers)
+			saveinputs(statuses__headers, statuses__settings)
 		})
 	})
 })
 
-function saveinputs(inputs) {
+function saveinputs(headers, settings) {
 	arr = ""
 
-	inputs.forEach((input) => {
+	headers.forEach((input) => {
 		arr += input.value + "~~"
 	})
 
@@ -3956,4 +4029,81 @@ function saveinputs(inputs) {
 		console.log("Piu piu pau pau")
 		console.log(data)
 	})
+
+	arr = ""
+	settings.forEach((input) => {
+		arr += input.value + "~~"
+	})
+	id_ = preset_id
+	formData = {
+		prid: id_,
+		mkey: "s_statussettings",
+		material_array: arr,
+	}
+	console.log(formData)
+	$.ajax({
+		type: "POST",
+		url: "vendor/admin__settingsedit.php",
+		data: formData,
+		error: function (jqxhr, status, exception) {
+			//alert('Tietokantavirhe, soita numeroon +358449782028');
+		},
+	}).done(function (data) {
+		console.log("Piu piu pau pau")
+		console.log(data)
+	})
+}
+
+function admin__saveteams() {
+	full_arr = ""
+	rows = document.querySelectorAll(".tiimit__tbody tr:not(.headingrow)")
+
+	rows.forEach((row) => {
+		arr = ""
+		inputs = row.querySelectorAll("input")
+
+		inputs.forEach((input) => {
+			arr += input.value + "~~"
+		})
+		console.log(row)
+		full_arr += arr + "-"
+	})
+
+	id_ = preset_id
+	formData = {
+		prid: id_,
+		mkey: "s_teams",
+		material_array: full_arr,
+	}
+	console.log(formData)
+	$.ajax({
+		type: "POST",
+		url: "vendor/admin__settingsedit.php",
+		data: formData,
+		error: function (jqxhr, status, exception) {
+			//alert('Tietokantavirhe, soita numeroon +358449782028');
+		},
+	}).done(function (data) {
+		console.log("Piu piu pau pau")
+		console.log(data)
+	})
+}
+
+function zero_controls_close() {
+	document.querySelector(".zero_popup").classList.add("out")
+	document.querySelector(".zero_popup").classList.remove("two")
+
+	mainsite = window.location.host
+	prid = document.querySelector("#current_project_id").value
+
+	if (document.querySelector("#usr__selection").value.charAt(0) == " ") {
+		selected_user = document
+			.querySelector("#usr__selection")
+			.value.replace(" ", "")
+	} else {
+		selected_user = document.querySelector("#usr__selection").value
+	}
+	window.location.replace(
+		"http://" + mainsite + "/post.php?id=" + prid + "&user=" + selected_user
+	)
 }

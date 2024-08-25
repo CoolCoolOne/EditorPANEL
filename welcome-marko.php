@@ -710,6 +710,7 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                 <tr class="headingrow">
                   <td>ON/OFF</td>
                   <td>Tiiminro</td>
+                  <td>Nimi</td>
                 </tr>
               </tbody>
             </table>
@@ -730,11 +731,16 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning c_meaning_9" data-action="problem"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  
+                  
                 </div>
+                
               </div>
+             
               <div class="col-6 popup__statuses_f row">
                 <div class="col-1">
                   <div class="c_meaning" data-action="l5_a"></div>
@@ -744,9 +750,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="l5_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_b row">
@@ -758,9 +769,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="l4_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_c row">
@@ -772,9 +788,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="l3_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_d row">
@@ -786,9 +807,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="l2_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_e row">
@@ -800,9 +826,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="l1_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_g row">
@@ -814,9 +845,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="s6_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_h row">
@@ -828,9 +864,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="s7_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_i row">
@@ -842,9 +883,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="s8_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_j row">
@@ -856,9 +902,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="s9_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
               <div class="col-6 popup__statuses_k row">
@@ -870,9 +921,14 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
                   <div class="c_meaning" data-action="s10_e"></div>
                 </div>
                 <div class="col-6 align_center">
-                  <h2>
+                  <h4>
+                    Otsikko:
                     <input type="text" class="lineinput">
-                  </h2>
+                  </h4>
+                  <label>
+                    Sallitut Tiimit:
+                    <input type="text" class="allowed_teams">
+                  </label>
                 </div>
               </div>
             </div>
@@ -978,7 +1034,8 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin'){
               <td>Näkyy kaikille</td>
               <td>Puh</td>
               <td style="width: 145px;">Email</td>
-              <td>Yritys</td>
+              <td>Tiimi</td>
+
             </tr>
             <?php
               $users = mysqli_query($db, "SELECT * FROM `users` WHERE `role`!='admin' ");

@@ -2,9 +2,6 @@
 <?php
 require "vendor/config.php";
 session_start();
-// echo '<hr>';
-// print_r($_SESSION);
-// echo '<hr>';
 require "./revRedir/checkLog.php";
 
 
@@ -50,7 +47,7 @@ else {
 
         $txt = "";
         foreach ($_open_comments as $value) {
-            $txt .= $value[0] . "," . $value[1] . "," . $value[2] . "," . $value[3]. "," . $value[4] . "," .  $value[5] . "," . $value[6] . "," . $value[7] . "," .  $value[8] . "," . $value[9] . "," . $value[10] . "," . $value[11] . "," . $value[12] . "," . $value[13] . "," . $value[14];
+            $txt .= $value[0] . "," . $value[1] . "," . $value[2] . "," . $value[3] . "," . $value[4] . "," .  $value[5] . "," . $value[6] . "," . $value[7] . "," .  $value[8] . "," . $value[9] . "," . $value[10] . "," . $value[11] . "," . $value[12] . "," . $value[13] . "," . $value[14];
             $txt .= "~";
         }
         echo '<input type="hidden" value="' . $txt . '" id="open_comments" name="open_comments">';
@@ -58,9 +55,7 @@ else {
         include('./templates/drawarea.php');
         include('./templates/commentator.php');
         echo '<style> .drawarea__top,.box,.drawarea__right.recl_btn,.drawarea__controls_one {display: none !important} .da_controls_commenting {display: block !important} .nav li div.nav_current {color:black}</style>';
-
-    }
-    else {
+    } else {
         $usrpermissions_ = mysqli_query($db, "SELECT * FROM `users` WHERE `username`='$usr';");
         $usrpermissions = mysqli_fetch_all($usrpermissions_);
         $open_comments_ = mysqli_query($db, "SELECT * FROM `comments` WHERE `projectid`=$id AND `ending_time`='' AND `answer_to`='' AND `comment_to` LIKE '%$usr%';");
@@ -68,17 +63,15 @@ else {
 
         $txt = "";
         foreach ($_open_comments as $value) {
-            if($usrpermissions[0][4] == 0) {
-                if($usrpermissions[0][1] == $value[7] || $usrpermissions[0][1] == $value[8]) {
-                    $txt .= $value[0] . "," . $value[1] . "," . $value[2] . "," . $value[3]. "," . $value[4] . "," .  $value[5] . "," . $value[6] . "," . $value[7] . "," .  $value[8] . "," . $value[9] . "," . $value[10] . "," . $value[11] . "," . $value[12] . "," . $value[13] . "," . $value[14];
+            if ($usrpermissions[0][4] == 0) {
+                if ($usrpermissions[0][1] == $value[7] || $usrpermissions[0][1] == $value[8]) {
+                    $txt .= $value[0] . "," . $value[1] . "," . $value[2] . "," . $value[3] . "," . $value[4] . "," .  $value[5] . "," . $value[6] . "," . $value[7] . "," .  $value[8] . "," . $value[9] . "," . $value[10] . "," . $value[11] . "," . $value[12] . "," . $value[13] . "," . $value[14];
                     $txt .= "~";
                 }
-            }
-            else {
-                $txt .= $value[0] . "," . $value[1] . "," . $value[2] . "," . $value[3]. "," . $value[4] . "," .  $value[5] . "," . $value[6] . "," . $value[7] . "," .  $value[8] . "," . $value[9] . "," . $value[10] . "," . $value[11] . "," . $value[12] . "," . $value[13] . "," . $value[14];
+            } else {
+                $txt .= $value[0] . "," . $value[1] . "," . $value[2] . "," . $value[3] . "," . $value[4] . "," .  $value[5] . "," . $value[6] . "," . $value[7] . "," .  $value[8] . "," . $value[9] . "," . $value[10] . "," . $value[11] . "," . $value[12] . "," . $value[13] . "," . $value[14];
                 $txt .= "~";
             }
-
         }
         echo '<input type="hidden" value="' . $txt . '" id="open_comments" name="open_comments">';
         include('./templates/2_0.php');
@@ -104,6 +97,38 @@ echo '<input type="hidden" value="" id="listat_list">';
 
 include('./footer-post.php');
 
+
+        $usr = $_GET["user"];
+        echo $usr;
+
+        $user_team_n = mysqli_query($db, "SELECT `company` FROM `users` WHERE `username` LIKE '%$usr%'; ");
+        $user_team = mysqli_fetch_all($user_team_n)[0][0];
+        echo "USR TEAM".$user_team;
+        // this and 2_0 in templ demands setpreset changing
+        $set = mysqli_query($db, "SELECT * FROM `settingsmeta` WHERE `meta_key`='s_statussettings';");
+        $set = mysqli_fetch_all($set)[0][3];
+        $set_array = explode("~~", $set);
+        
+        $int = 0;
+        $array = [];
+        foreach ($set_array as $key => $s) {
+          $s_array = explode(",",$s);
+          foreach ($s_array as $key => $z) {
+            if(intval($z === $user_team)) {
+              array_push($array,$int);
+            }
+          }
+          $int += 1;
+        }
+
+        $old = ["0","1", "2", "3","4","5","6","7","8","9"];
+        $new  = ["_f", "_b", "_c","_d","_e","_g","_h","_i","_j","_k"];
+        
+
+        foreach ($array as $key => $s) {
+          $z =str_replace($old, $new, $s);
+          echo '<script> document.querySelectorAll(`.popup__statuses'.$z.'`).forEach(el => el.classList.add(`p_active`));</script>';
+        }
 echo '<input style="display: none;" value="'.$loggined_usr.'" id="loggined_usr" name="loggined_usr">';
 ?>
 <!-- <script src="./revRedir/revRedir.js"></script> -->
