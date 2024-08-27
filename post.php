@@ -8,8 +8,17 @@ require "./revRedir/checkLog.php";
 $id = $_GET["id"];
 $post = mysqli_query($db, "SELECT * FROM `projects` WHERE `id` = '$id'");
 $post_tradarray = mysqli_fetch_all($post)[0];
+
+// $julkisvu_label = mysqli_fetch_all(mysqli_query($db, "SELECT project_type FROM projects WHERE id = '44'"));
+// print_r ($julkisvu_label[0][0]);
+// echo '<br>';
+// echo 'Julkisivu';
+
+
 $post = mysqli_query($db, "SELECT * FROM `projects` WHERE `id` = '$id'");
 $post = mysqli_fetch_assoc($post);
+
+
 
 
 
@@ -134,12 +143,12 @@ echo '<input style="display: none;" value="'.$loggined_usr.'" id="loggined_usr" 
 <!-- <script src="./revRedir/revRedir.js"></script> -->
  <script>
 function zero_controls_close_reverRedirt() {
-	console.log('TRO FUNC HELLO');
 	document.querySelector(".zero_popup").classList.add("out")
 	document.querySelector(".zero_popup").classList.remove("two")
 
 	mainsite = window.location.host
 	prid = document.querySelector("#current_project_id").value
+    project_type = document.querySelector("#current_project_measurement").value;
 
 	if (document.querySelector("#usr__selection").value.charAt(0) == " ") {
 		selected_user = document
@@ -152,7 +161,12 @@ function zero_controls_close_reverRedirt() {
 	let loggined_usr = document.querySelector("#loggined_usr").value
 	console.log(loggined_usr);
 	if (loggined_usr == selected_user){
-		window.location.replace("http://" + mainsite + "/post.php?id=" + prid + "&user=" + selected_user)
+        if (project_type=='Julkisivu'){
+            window.location.replace("http://julkisivut2.gromi.fi/post.php?id=" + prid + "&user=" + selected_user)
+        } else {
+            window.location.replace("http://" + mainsite + "/post.php?id=" + prid + "&user=" + selected_user)
+        }
+        //редирект на домен фасадов или на текущий (если авторизован в обоих случаях)
 	} else if (loggined_usr == 'noUser'){
         document.location.href = "http://" + mainsite + "/revRedir/sessionFromGet.php?id=" + prid + "&user=" + selected_user;
 	} else {
